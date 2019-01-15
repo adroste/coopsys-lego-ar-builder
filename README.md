@@ -1,13 +1,15 @@
 # coopsys-lego-ar-builder
 ## todos
 
-* [ ] Marker
+* [x] Marker
   * [x] Teileliste
-  * [ ] Modell
+  * [x] Modell
 * [ ] Modellmanager
-  * [ ] Schritt merken
-  * [ ] Korrektes Modell über Modellmarker anzeigen
-    * [ ] Ein und ausblenden von Teilen
-  * [ ] Teileliste
-    * [ ] für jeweiligen Schritt den richtigen Legostein einblenden (+ eigenschaften)
+  * [x] Schritt merken
+  * [x] Korrektes Modell über Modellmarker anzeigen
+    * [x] Ein und ausblenden von Teilen
+    * [ ] hervorheben des aktuellen teils (blinken, heller machen, andere dunkler machen, o.ä.)
+  * [x] Teileliste
+    * [x] für jeweiligen Schritt den richtigen Legostein einblenden
+    * [ ] eigenschaften legostein einblenden
 * [ ] Netzwerksynchronisation (kompletter State)
