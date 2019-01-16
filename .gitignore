@@ -110,7 +110,7 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
+#*.apk
 
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
