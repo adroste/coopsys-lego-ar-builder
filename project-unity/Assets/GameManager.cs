@@ -13,7 +13,16 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
     private GameObject _part2Marker;
     private GameObject[] _part2Parts = new GameObject[5];
     private Text _curStepText;
+    private TextMesh _part1InfoText;
+    private TextMesh _part2InfoText;
     private int _curStep = 1;
+    private static readonly string[] _partInfoTexts = {
+        "Height: 2\n\nWidth: 4\n\nDepth: 2\n\nColor: light yellow", // part 1
+        "Height: 1\n\nWidth: 4\n\nDepth: 2\n\nColor: red",
+        "Height: 1\n\nWidth: 4\n\nDepth: 2\n\nColor: red",
+        "Height: 1\n\nWidth: 6\n\nDepth: 2\n\nColor: orange",
+        "Height: 2\n\nWidth: 2\n\nDepth: 2\n\nColor: yellow", // part 5
+    };
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +32,9 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
         this._part1Marker = GameObject.Find("NextPartMarker");
         this._part2Marker = GameObject.Find("SubsequentPartMarker");
         this._curStepText = GameObject.Find("CurrentStepText").GetComponent<Text>();
+
+        this._part1InfoText = this._part1Marker.transform.Find("InfoText").GetComponent<TextMesh>();
+        this._part2InfoText = this._part2Marker.transform.Find("InfoText").GetComponent<TextMesh>();
 
         // get single parts (sorted) of composed model
         Transform model = this._buildMarker.transform.Find("model");
@@ -90,6 +102,9 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
         
         this._curStep = nextStep;
         this._curStepText.text = "Step: " + nextStep + "/5";
+
+        this._part1InfoText.text = _partInfoTexts[nextStep - 1];
+        this._part2InfoText.text = nextStep < 5 ? _partInfoTexts[nextStep] : "";
 
         for (int i = 0; i < 5; ++i) {
             // change displayed model
