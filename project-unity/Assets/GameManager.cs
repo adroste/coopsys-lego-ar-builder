@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
 {
     private GameObject _buildMarker;
     private GameObject[] _modelParts = new GameObject[5];
+    private GameObject[] _modelWfParts = new GameObject[5];
     private GameObject _part1Marker;
     private GameObject[] _part1Parts = new GameObject[5];
     private GameObject _part2Marker;
@@ -41,6 +42,10 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
         for (int i = 0; i < 5; ++i)
             this._modelParts[i] = model.Find("b" + (i + 1)).gameObject;
 
+        Transform modelWf = this._buildMarker.transform.Find("modelWireframe");
+        for (int i = 0; i < 5; ++i)
+            this._modelWfParts[i] = modelWf.Find("b" + (i + 1)).gameObject;
+
         // get single parts (sorted) for next/subsequent part sections
         Transform parts1 = this._part1Marker.transform.Find("parts");
         for (int i = 0; i < 5; ++i)
@@ -55,6 +60,8 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
             virtualButtonBehaviour.RegisterEventHandler(this);
 
         this._switchStep(1);
+
+        InvokeRepeating("BlinkActivePart", 0f, .4f);
         Debug.Log("Finished Start()");
     }
 
@@ -67,7 +74,14 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    void BlinkActivePart()
+    {
+        GameObject mp = this._modelParts[this._curStep - 1];
+        GameObject mwfp = this._modelWfParts[this._curStep - 1];
+        mp.SetActive(!mp.activeSelf);
+        mwfp.SetActive(!mwfp.activeSelf);
     }
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
@@ -108,10 +122,14 @@ public class GameManager : MonoBehaviour, IVirtualButtonEventHandler
 
         for (int i = 0; i < 5; ++i) {
             // change displayed model
-            if (i <= nextStep - 1)
+            if (i <= nextStep - 1) {
                 this._modelParts[i].SetActive(true);
-            else
+                this._modelWfParts[i].SetActive(false);
+            }
+            else {
                 this._modelParts[i].SetActive(false);
+                this._modelWfParts[i].SetActive(true);
+            }
 
             // change displayed bricks on part list
             if (i == nextStep - 1)
