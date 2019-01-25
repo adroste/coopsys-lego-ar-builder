@@ -4387,7 +4387,7 @@ PrefabInstance:
     - target: {fileID: 114583881139443762, guid: bee16e811e5a644c9b517739e0ba4193,
         type: 3}
       propertyPath: setAryzonModeOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee16e811e5a644c9b517739e0ba4193, type: 3}
