@@ -12,7 +12,7 @@
 \usepackage{scrpage2}
 \pagestyle{scrheadings}
 \ihead{Visual Support for operation manuals}
-\ohead{\pagemark}
+\ohead{ID: \qquad}
 \chead{}
 \cfoot{}
 
@@ -144,14 +144,20 @@
 			\rownumber & \Qq{Alter:} & \Qline{1.5cm} \\
 			\rownumber & \Qq{Geschlecht:} & \QO{männlich} \newline \QO{weiblich} \newline \QO{andere} \\
 			\rownumber & \Qq{Nutzt du regelmäßig Bedienungs-/Aufbauanleitungen?} & \QO{Ja} \newline \QO{Nein} \\
-			\rownumber & \Qq{Nutzt du weiter Hilfsmittel beim Einsatz von Bedienungs-/Aufbauanleitungen? (z.B. YouTube Videos)} & \QO{Ja} \newline \QO{Nein} \\
-			\rownumber & \Qq{Hast du schon mal mit jemandem gemeinsam eine Bedienungs-/Aufbauanleitungen genutzt?} & \QO{Ja} \newline \QO{Nein} \\
+			\rownumber & \Qq{Nutzt du weitere Hilfsmittel beim Einsatz von Bedienungs-/Aufbauanleitungen? (z.B. YouTube Videos)} & \QO{Ja} \newline \QO{Nein} \\
+			\rownumber & \Qq{Hast du schon einmal mit jemandem gemeinsam eine Bedienungs-/Aufbauanleitungen genutzt?} & \QO{Ja} \newline \QO{Nein} \\
 			\rownumber & \Qq{Wie gut hat das geklappt?} & sehr schlecht \Qrating{5} sehr gut \\
 			\rownumber & \Qq{Wie viel Erfahrung hast du mit Augmented Reality?} & \QO{keine} \newline \QO{schonmal benutzt} \newline \QO{hin und wieder (mehr als einmal)} \newline \QO{regelmäßig (einmal pro Monat)} \\
 		\end{tabularx}
 	\end{table}
+
+	\newpage
 	
 	\subsection*{Über das Experiment}
+	\textbf{Variante:} \QO{Ohne AR-Support} \QO{Mit AR-Support} \\
+	\textbf{Rolle:} \hspace{5.5mm} \QO{Bauen} \hspace{20.5mm} \QO{Teile suchen}
+
+	\setcounter{rownumbers}{0}
 	
 	\begin{table}[H]
 		\centering
@@ -160,17 +166,17 @@
 			& sehr unzufrieden \Qrating{5} sehr zufrieden \\
 			\rownumber & \Qq{Wie stark hat diese Form der Anleitung dich/euch beim Zusammenbauen unterstützt?} \\
 			& sehr wenig \Qrating{5} sehr stark\\
-			\rownumber & \Qq{Wie schnell hast du die Erfüllung der Aufgabe mit dieser Form der Anleitung wahrgenommen?} \\
+			\rownumber & \Qq{Wie schnell habt ihr die Aufgabe erfüllt?} \\
 			& sehr langsam \Qrating{5} sehr schnell \\
 			\rownumber & \Qq{Wie zufrieden warst du mit der Präzision, mit der ihr die Anleitung umgesetzt habt?} \\
 			& sehr unzufrieden \Qrating{5} sehr zufrieden \\
-			\rownumber & \Qq{Hattest du das Gefühl ihr habt bei der Nutzung der Anleitung viel kommuniziert?} \\
+			\rownumber & \Qq{Wie häufig habt ihr miteinander kommuniziert?} \\
 			& sehr häufig \Qrating{5} sehr selten \\
-			\rownumber & \Qq{Wie häufig gab es bei der Nutzung der Anleitung Kommunikationsprobleme?} \\
+			\rownumber & \Qq{Wie häufig gab es Kommunikationsprobleme?} \\
 			& sehr häufig \Qrating{5} sehr selten \\
-			\rownumber & \Qq{Wie häufig hattest du das Gefühl genau zu wissen was dein Partner tut?} \\
+			\rownumber & \Qq{Wie häufig hattest du das Gefühl, genau zu wissen, was dein Partner tut?} \\
 			& sehr häufig \Qrating{5} sehr selten \\
-			\rownumber & \Qq{Wie häufig wurden bei der Nutzung der Anleitung für den Schritt falsche Teile herausgesucht?} \\
+			\rownumber & \Qq{Wie häufig wurden Fehler gemacht (z.B. falsche Teile herausgesucht)?} \\
 			& sehr häufig \Qrating{5} sehr selten \\
 			\rownumber & \Qq{Wie stressig hast du die Nutzung der Anleitung für dich empfunden?} \\
 			& sehr entspannt \Qrating{5} sehr stressig/anstrengend \\
